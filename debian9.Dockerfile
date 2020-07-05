@@ -9,10 +9,10 @@ RUN apt-get update && \
 	rm -rf /var/lib/apt/lists/* && \
   mkdir -p /tool/jacop && \
 	cd /tool/jacop && \
-	wget http://central.maven.org/maven2/org/jacop/jacop/4.6.0/jacop-4.6.0.jar && \
+	wget http://cs.unibo.it/~tong.liu3/solvers2020/jacop-4.7.0.jar && \
 
 	echo '#! /bin/sh \n\
-java -jar /tool/jacop/jacop-4.6.0.jar "$@"' > /tool/jacop/fzn-jacop && \
+java -jar /tool/jacop/jacop-4.7.0.jar "$@"' > /tool/jacop/fzn-jacop && \
 	chmod 700 fzn-jacop && \
 	git clone https://github.com/radsz/jacop.git && \
 	mv jacop/src/main/minizinc/org/jacop/minizinc/ mzn-lib && \
